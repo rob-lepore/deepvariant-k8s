@@ -4,6 +4,9 @@ metadata:
   name: nextflow-role
   namespace: default
 rules:
-- apiGroups: [""]
-  resources: ["pods", "pods/log", "pods/status"]
-  verbs: ["create", "get", "watch", "list", "delete"]
+- apiGroups: [""]       # core API
+  resources: ["pods", "pods/log", "pods/status", "events"]
+  verbs: ["get", "watch", "list", "create", "delete"]
+- apiGroups: ["batch"]  # batch API group for jobs
+  resources: ["jobs"]
+  verbs: ["get", "watch", "list", "create", "delete"]
