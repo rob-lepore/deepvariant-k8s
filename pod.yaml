@@ -13,7 +13,7 @@ spec:
       image: nextflow/nextflow:latest
       command: ["/bin/sh", "-c"]
       args:
-        - "cd /mnt/shared && nextflow run main.nf"
+        - "cd /mnt/shared && nextflow run main3.nf -profile k8s --sample_cram sample_cram.csv --reference_fasta hs37d5.fa"
       volumeMounts:
         - name: shared
           mountPath: /mnt/shared

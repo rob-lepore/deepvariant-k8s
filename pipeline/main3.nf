@@ -68,7 +68,7 @@ process DEEPVARIANT {
 
     input:
     tuple val(sample_name), path(cram), path(crai)        // <— include CRAI
-    tuple path(reference_fasta), path(reference_fasta_fai)
+    //tuple path(reference_fasta), path(reference_fasta_fai)
 
     output:
     tuple val(sample_name), path("${sample_name}.vcf.gz"), emit: vcf
@@ -101,5 +101,5 @@ process DEEPVARIANT {
 
 workflow {
     // Bind BOTH channels (samples + reference)
-    DEEPVARIANT(sample_cram, ref_ch)
+    DEEPVARIANT(sample_cram)
 }
