@@ -13,7 +13,7 @@ spec:
       image: nextflow/nextflow:latest
       command: ["/bin/sh", "-c"]
       args:
-        - "cd /mnt/shared && nextflow run hello"
+        - "cd /mnt/shared && nextflow run main.nf"
       volumeMounts:
         - name: shared
           mountPath: /mnt/shared
